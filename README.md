@@ -1,69 +1,92 @@
-# Smart Order Intake System
+# Smart Order Intake
 
-A system that automatically processes customer emails, extracts purchase requests, validates them against a product catalog, and provides a user interface for order review and approval.
+A modern, AI-powered system for extracting, validating, and structuring purchase orders from unstructured emails. Built for Zaqathon.
+
+---
 
 ## Features
 
-- Email processing and order extraction
-- SKU validation against product catalog
-- MOQ (Minimum Order Quantity) validation
-- Inventory availability checking
-- JSON output with validated order data
-- User interface for order review and approval
-- Confidence scores for extracted fields
-- PDF form filling automation
+- **Extracts** SKUs, quantities, and delivery requirements from messy/unstructured emails.
+- **Validates** requests against a product catalog (SKU existence, MOQ, inventory).
+- **Outputs** structured JSON with validated SKUs, quantities, customer notes, and delivery preferences.
+- **Flags issues** and proposes solutions (e.g., SKU doesn't exist, MOQ not met, suggest alternatives).
+- **User-friendly UI** for pasting or uploading emails, reviewing parsed orders, and downloading results.
+
+---
 
 ## Tech Stack
 
-- Frontend: Next.js with TypeScript
-- Backend: Node.js with Express
-- Database: SQLite (for development)
-- Email Processing: Node-mailparser
-- PDF Processing: PDFKit
-- UI Framework: Tailwind CSS
+- **Frontend:** Next.js, React, Tailwind CSS
+- **Backend:** Node.js, Express, TypeScript
+
+---
+
+## Getting Started
+
+### 1. Clone the repository
+
+```sh
+git clone https://github.com/sangeeths29/zaqathon-sangeeth.git
+cd zaqathon-sangeeth
+```
+
+### 2. Install dependencies
+
+#### Backend
+```sh
+cd backend
+npm install
+```
+
+#### Frontend
+```sh
+cd ../frontend
+npm install
+```
+
+### 3. Run the app
+
+#### Backend
+```sh
+npm run dev
+```
+
+#### Frontend (in a new terminal)
+```sh
+npm run dev
+```
+
+- Frontend: [http://localhost:3000](http://localhost:3000)
+- Backend API: [http://localhost:4000](http://localhost:4000)
+
+---
+
+## Usage
+
+1. **Paste** or **upload** an email in the UI.
+2. Click **Parse Email**.
+3. Review the structured order, issues, and suggestions.
+4. Download the result as JSON.
+
+---
 
 ## Project Structure
 
 ```
-├── frontend/           # Next.js frontend application
-├── backend/           # Node.js backend server
-├── shared/           # Shared types and utilities
-├── data/            # Sample data and catalogs
-└── docs/            # Documentation
+zaqathon-sangeeth/
+  backend/    # Node.js/Express API
+  frontend/   # Next.js/Tailwind frontend
 ```
 
-## Getting Started
+---
 
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   # Install backend dependencies
-   cd backend
-   npm install
+## Judging Notes
 
-   # Install frontend dependencies
-   cd ../frontend
-   npm install
-   ```
+- The system is robust and works with any email input.
+- All sample/test files are removed from the repo, but you can add your own for testing.
+- The UI is responsive and works on all modern browsers.
 
-3. Start the development servers:
-   ```bash
-   # Start backend server
-   cd backend
-   npm run dev
-
-   # Start frontend server
-   cd ../frontend
-   npm run dev
-   ```
-
-4. Open http://localhost:3000 in your browser
-
-## Development
-
-- Backend runs on http://localhost:4000
-- Frontend runs on http://localhost:3000
-- API documentation available at http://localhost:4000/api-docs
+---
 
 ## License
 
